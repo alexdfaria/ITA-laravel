@@ -77,7 +77,7 @@
               -->
               <div class="logo">
                 <a href="https://creative-tim.com/" class="simple-text logo-normal">
-                  {{ __('Creative Tim') }}
+                  {{ __('ITA Project') }}
                 </a>
               </div>
               <div class="sidebar-wrapper">
@@ -91,7 +91,7 @@
                   <li class="nav-item">
                     <a class="nav-link" data-toggle="collapse" href="#laravelExample" aria-expanded="true">
                       <i><img style="width:25px" src="{{ asset('material') }}/img/laravel.svg"></i>
-                      <p>{{ __('Laravel Examples') }}
+                      <p>{{ __('User Options') }}
                         <b class="caret"></b>
                       </p>
                     </a>
@@ -115,43 +115,13 @@
                   <li class="nav-item">
                     <a class="nav-link" href="{{ route('table') }}">
                       <i class="material-icons">content_paste</i>
-                        <p>{{ __('Table List') }}</p>
+                        <p>{{ __('Meals Table') }}</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="{{ route('typography') }}">
-                      <i class="material-icons">library_books</i>
-                        <p>{{ __('Typography') }}</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{ route('icons') }}">
-                      <i class="material-icons">bubble_chart</i>
-                      <p>{{ __('Icons') }}</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{ route('map') }}">
-                      <i class="material-icons">location_ons</i>
-                        <p>{{ __('Maps') }}</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{ route('notifications') }}">
-                      <i class="material-icons">notifications</i>
-                      <p>{{ __('Notifications') }}</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{ route('language') }}">
-                      <i class="material-icons">language</i>
-                      <p>{{ __('RTL Support') }}</p>
-                    </a>
-                  </li>
-                  <li class="nav-item active-pro">
-                    <a class="nav-link" href="{{ route('upgrade') }}">
-                      <i class="material-icons">unarchive</i>
-                      <p>{{ __('Upgrade to PRO') }}</p>
+                    <a class="nav-link" href="{{ route('table2') }}">
+                      <i class="material-icons">content_paste</i>
+                        <p>{{ __('Warehouses Table') }}</p>
                     </a>
                   </li>
                 </ul>
@@ -252,9 +222,6 @@
                     <th>
                       Creation date
                     </th>
-                    <th class="text-right">
-                      Actions
-                    </th>
                   </tr></thead>
                   <tbody>
                   @foreach($users as $user)
@@ -268,12 +235,6 @@
                         <td>
                           {{$user->created_at}}
                         </td>
-                        <td class="td-actions text-right">
-                                                        <a rel="tooltip" class="btn btn-success btn-link" href="#" data-original-title="" title="">
-                              <i class="material-icons">edit</i>
-                              <div class="ripple-container"></div>
-                            </a>
-                                                    </td>
                       </tr>
                     @endforeach
 
@@ -365,9 +326,9 @@
                 <img src="{{ asset('material') }}/img/sidebar-4.jpg" alt="">
               </a>
             </li>
-            <li class="button-container">
+<!--             <li class="button-container">
               <a href="https://www.creative-tim.com/product/material-dashboard-laravel" target="_blank" class="btn btn-primary btn-block">Free Download</a>
-            </li>
+            </li> -->
             <!-- <li class="header-title">Want more components?</li>
                 <li class="button-container">
                     <a href="https://www.creative-tim.com/product/material-dashboard-pro" target="_blank" class="btn btn-warning btn-block">

@@ -31,29 +31,26 @@ class UserController extends Controller
     public function store(Request $request)
     {
 
-        User::create([
-
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => $request->password,
-        ]);
-        
-        //$user = User::create(request(['name', 'email', 'password']));
-        
-        //auth()->login($user);
+        $user = new User;
+        $user->name = $request->name;  
+        $user->password = $request->password;  
+        $emailAsAValueObject = new Email($request->email);
+        $user->setEmail($emailAsAValueObject);
+        $user->save();
         
         return redirect('/user');
     }
+}
 
-        /**
-     * Show a list of all of the application's users.
-     *
-     * @return Response
-     */
-/*     public function index()
+Class Email {
+    
+    private $email;
+
+    public function getEmail()
     {
-        $users = DB::table('users')->get();
-
-        return view('pages.table_list', ['users' => $users]);
-    } */
+        return $this->email;
+    }
+    public function setEmail($email){
+        $this->email = $email;
+    }
 }

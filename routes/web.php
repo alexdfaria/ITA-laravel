@@ -37,17 +37,27 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('users.add_user');
 	})->name('adduser'); */
 
-	Route::get('/table-list', function () {
+/* 	Route::get('/table-list', function () {
 
 		$meals = DB::table('meals')->get();
         
         return view('pages.table_list', ['meals' => $meals]);
-	})->name('table');
+	})->name('table'); */
 
-	//Route::get('/table-list', 'MealController@create');
+
+	Route::get('/table-list', 'MealController@index')->name('table');
+	Route::get('/table-list2', 'WarehouseController@lazyLoad')->name('table2');
+
+	Route::get('/table-test/{meal_id}/{value}', 'StockController@updateStockGeral');
+
+	Route::get('/table-add', 'MealController@create');
+	Route::post('table-add', 'MealController@store');
 
 	Route::get('/table-edit/{id}', 'MealController@show');
 	Route::post('table-edit/{id}', 'MealController@update');
+	Route::get('/table-delete/{id}', 'MealController@destroy');
+
+
 
 	Route::get('/adduser', 'UserController@create');
 	Route::post('adduser', 'UserController@store');

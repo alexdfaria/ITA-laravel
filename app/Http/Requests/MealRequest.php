@@ -34,7 +34,13 @@ class MealRequest extends FormRequest
                 'required', 'min:3',
             ],
             'company' => [
-                'required', 'min:3'
+                'required', 'min:3',
+            ],
+            'price' => [
+                'required',
+            ],
+            'stock' => [
+                'required',
             ]
         ];
     }

@@ -6,12 +6,12 @@
 
   <div class="row">
         <div class="col-md-12">
-          <form method="post" action="{{url('table-edit', ['id' => $meal->id])}}">
+          <form method="post" action="{{url('table-add')}}">
           {{ csrf_field() }}
 
             <div class="card ">
               <div class="card-header card-header-primary">
-                <h4 class="card-title">{{ __('Edit Meal') }}</h4>
+                <h4 class="card-title">{{ __('Create new Meal') }}</h4>
                 <p class="card-category">{{ __('Meal information') }}</p>
               </div>
               <div class="card-body ">
@@ -28,52 +28,45 @@
                   </div>
                 @endif
                 <div class="row">
-                  <label class="col-sm-2 col-form-label">{{ __('ID') }}</label>
-                  <div class="col-sm-2">
-                    <div class="form-group">
-                    <p> {{ $meal->id }}</p>
-                    </div>
-                  </div>
-                  <div class="col-sm-3">
-                    <div class="form-group">
-                    <h6 style="color:red;">(You cannot change the id)</h6>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
                   <label class="col-sm-2 col-form-label">{{ __('Name') }}</label>
                   <div class="col-sm-3">
                     <div class="form-group">
-                      <input class="form-control" name="name" id="input-name" type="text" placeholder="{{ $meal->name }}" value="{{ $meal->name }}" required="true" aria-required="true"/>  
+                      <input class="form-control" name="name" id="input-name" type="text" required="true" aria-required="true"/>  
                         <span id="name-error" class="error text-danger" for="input-name"></span>
                     </div>
                   </div>
-
-                  <label class="col-sm-2 col-form-label">{{ __('Warehouse ID') }}</label>
-                  <div class="col-sm-3">
-                    <div class="form-group">
-                      <input class="form-control" name="warehouse" id="input-warehouse" type="text" placeholder="{{ $meal->warehouse_id }}" value="{{ $meal->warehouse_id }}" required />
-                        <span id="email-error" class="error text-danger" for="input-warehouse"></span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row">
                   <label class="col-sm-2 col-form-label">{{ __('Type of Food') }}</label>
                   <div class="col-sm-3">
                     <div class="form-group">
-                      <input class="form-control" name="type" id="input-type" type="text" placeholder="{{ $meal->type }}" value="{{ $meal->type }}" required="true" aria-required="true"/>  
+                      <input class="form-control" name="type" id="input-type" type="text" required="true" aria-required="true"/>  
                         <span id="name-error" class="error text-danger" for="input-type"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                <label class="col-sm-2 col-form-label">{{ __('Warehouse ID') }}</label>
+                  <div class="col-sm-3">
+                    <div class="form-group">
+                      <input class="form-control" name="warehouse" id="input-warehouse" type="text" required="true" />
+                        <span id="email-error" class="error text-danger" for="input-warehouse"></span>
                     </div>
                   </div>
                   <label class="col-sm-2 col-form-label">{{ __('Price') }}</label>
                   <div class="col-sm-3">
                     <div class="form-group">
-                      <input class="form-control" name="price" id="input-price" type="text" placeholder="{{ $meal->price }}" value="{{ $meal->price }}" required />
+                      <input class="form-control" name="price" id="input-price" type="text" required />
                         <span id="email-error" class="error text-danger" for="input-price"></span>
                     </div>
                   </div>
-                </div>
+                  </div>
+                  <div class="row">
+                  <label class="col-sm-2 col-form-label">{{ __('Stock') }}</label>
+                  <div class="col-sm-3">
+                    <div class="form-group">
+                      <input class="form-control" name="stock" id="input-stock" type="text" required />
+                        <span id="email-error" class="error text-danger" for="input-stock"></span>
+                    </div>
+                  </div>
               </div>
               <div class="card-footer ml-auto mr-auto">
                 <button type="submit" class="btn btn-primary">{{ __('Save') }}</button>

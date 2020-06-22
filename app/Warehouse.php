@@ -2,14 +2,14 @@
 
 namespace App;
 
-use App\Warehouse;
+use App\Meal;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
 
-class Meal extends Authenticatable
+class Warehouse extends Authenticatable
 {
     use Notifiable;
 
@@ -18,18 +18,19 @@ class Meal extends Authenticatable
      *
      * @var array
      */
-    protected $fillable = [
-        'name', 'type', 'warehouse_id', 'price', 'stock',
-    ];
 
-    protected $table = 'meals';
+    protected $table = 'warehouses';
+
+    protected $fillable = [
+        'warehouse_id', 'name', 'city',
+    ];
 
     public $timestamps = false;
 
-public function warehouse()
-{
-    return $this->hasOne(Warehouse::class);
-}
+    public function meal()
+    {
+        return $this->belongsTo(Meal::class);
+    }
 
 
 }
